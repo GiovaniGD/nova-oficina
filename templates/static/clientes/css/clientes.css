@@ -158,3 +158,11 @@ button#btn-servico-adicional {
     padding: 0.7rem 1.4rem;
     margin-left: 28%;
 }
+
+.tituloPagina {
+    text-align: center;
+}
+
+.tituloPagina h2{
+    font-weight: bold;
+}
