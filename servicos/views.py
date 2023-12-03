@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import FormServico
 from django.http import HttpResponse, FileResponse
 from .models import Servico, ServicoAdicional
@@ -13,7 +13,7 @@ def novo_servico(request):
         form = FormServico(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponse('Salvo com sucesso')
+            return redirect('/servicos/listar_servico/')
         else:
             return render(request, 'novo_servico.html', {'form': form})
         
@@ -25,19 +25,3 @@ def listar_servico(request):
 def servico(request, identificador):
     servico = get_object_or_404(Servico, identificador=identificador)
     return render(request, 'servico.html', {'servico': servico})
-
-def servico_adicional(request):
-    identificador_servico = request.POST.get('identificador_servico')
-    titulo = request.POST.get('titulo')
-    descricao = request.POST.get('descricao')
-    preco = request.POST.get('preco')
-
-    servico_adicional = ServicoAdicional(titulo=titulo, descricao=descricao, preco=preco)
-    
-    servico_adicional.save()
-
-    servico = Servico.objects.get(identificador=identificador_servico)
-    servico.servicos_adicionais.add(servico_adicional)
-    servico.save()
-
-    return HttpResponse("Salvo")

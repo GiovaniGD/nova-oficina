@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
 from .models import Equipe, Mecanico
 import re
@@ -35,4 +35,4 @@ def equipes(request):
             mec = Mecanico(mecanico=mecanico, email=email, cpf=cpf, equipe=equipe)
             mec.save()
 
-        return render(request, 'equipes.html', {'nome': nome, 'mecanicos': zip(mecanicos, emails, cpfs)})
+        return redirect('/equipes')

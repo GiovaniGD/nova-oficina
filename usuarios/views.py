@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
@@ -21,7 +21,7 @@ def cadastro(request):
         user = User.objects.create_user(username=username, email=email, password=senha)
         user.save()
 
-        return HttpResponse('usuario cadastrado')
+        return redirect('/usuarios/login/')
 
 def login(request):
     if request.method == "GET":
@@ -35,7 +35,7 @@ def login(request):
 
         if user:
             login_django(request, user)
-            return HttpResponse("Usuario logado")
+            return redirect('/clientes')
         else:
             return HttpResponse("Dados invalidos")
 

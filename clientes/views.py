@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
 from .models import Cliente, Carro
 import re
@@ -22,7 +22,7 @@ def clientes(request):
         carros = request.POST.getlist('carro')
         placas = request.POST.getlist('placa')
         anos = request.POST.getlist('ano')
- 
+
         cliente = Cliente.objects.filter(cpf=cpf)
 
         if cliente.exists():
@@ -44,7 +44,7 @@ def clientes(request):
             car = Carro(carro=carro, placa=placa, ano=ano, cliente=cliente)
             car.save()
 
-        return render(request, 'clientes.html', {'nome': nome, 'sobrenome': sobrenome, 'cpf': cpf, 'carros': zip(carros, placas, anos)})
+        return redirect('/clientes')
 
 @login_required(login_url="/usuarios/login/")
 def att_cliente(request):
