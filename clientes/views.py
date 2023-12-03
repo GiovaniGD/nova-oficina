@@ -22,7 +22,7 @@ def clientes(request):
         carros = request.POST.getlist('carro')
         placas = request.POST.getlist('placa')
         anos = request.POST.getlist('ano')
-
+ 
         cliente = Cliente.objects.filter(cpf=cpf)
 
         if cliente.exists():

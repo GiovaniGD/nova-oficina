@@ -29,7 +29,6 @@ class Servico(models.Model):
     finalizado = models.BooleanField(default=False)
     protocolo = models.CharField(max_length=52, null=True, blank=True)
     identificador = models.CharField(max_length=24, null=True, blank=True)
-    servicos_adicionais = models.ManyToManyField(ServicoAdicional)
 
     def __str__(self) -> str:
         return self.titulo

@@ -57,6 +57,22 @@ body {
     font-size: 1.2rem;
 }
 
+.btn-add-mecanicos {
+    background-color: #c4aa18; 
+    box-shadow: #766710 0.25rem 0.25rem;
+    padding: 0.5rem;
+    font-weight: medium;
+    cursor: pointer;
+    border-radius: 0.3rem;
+    transition: all 200ms;
+    color: white;
+    margin-left: 36.2%;
+}
+
+.btn-add-mecanicos:hover {
+    background-color: #ae9717; 
+}
+
 .btn-principal {
     color: white;
     border: none;
@@ -80,8 +96,17 @@ body {
     margin-left: 29%;
 }
 
-#btn-att-mecanico {
+#btn-att-cliente {
     margin-left: 29%;
+}
+
+#btns-mecanico {
+    margin-top: 3vh;
+    margin-left: 4rem;
+}
+
+#btn-enviar-mecanico {
+    margin-top: -1.1vh;
 }
 
 div a.btn-principal {
@@ -97,11 +122,11 @@ div a.btn-principal:hover {
     text-decoration: none;
 }
 
-#att_mecanico {
+#att_cliente {
     display: none;
 }
 
-#form-att-mecanico {
+#form-att-cliente {
     display: none;
 }
 
@@ -132,4 +157,12 @@ span.info-servicos {
 button#btn-servico-adicional {
     padding: 0.7rem 1.4rem;
     margin-left: 28%;
+}
+
+.tituloPagina {
+    text-align: center;
+}
+
+.tituloPagina h2{
+    font-weight: bold;
 }
