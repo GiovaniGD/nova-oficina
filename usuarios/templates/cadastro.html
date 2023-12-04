@@ -9,6 +9,10 @@
 
 {% block 'dashboard' %}
 
+    <br>
+    <div class="divCentro">
+        <h2>Cadastro</h2>
+    </div>
     <div class="container">
         <form action="{% url 'cadastro' %}" method="POST">{% csrf_token %}
             <p>Nome:</p>

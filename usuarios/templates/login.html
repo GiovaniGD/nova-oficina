@@ -9,6 +9,10 @@
 
 {% block 'dashboard' %}
 
+    <br>
+    <div class="divCentro">
+        <h2>Login</h2>
+    </div>
     <div class="container">
         <form action="{% url 'login' %}" method="POST">{% csrf_token %}
             <p>Nome:</p>
@@ -20,7 +24,7 @@
             <p>Senha:</p>
             <input class="form-control" type="password" placeholder="senha" name="senha">
             <br>
-            <input class="btn-principal" type="submit"value="login" style="margin-left: 40%;">
+            <input class="btn-principal" type="submit" value="login">
             <br>
         </form>
     </div>
