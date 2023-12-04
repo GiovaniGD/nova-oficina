@@ -66,7 +66,6 @@ body {
     border-radius: 0.3rem;
     transition: all 200ms;
     color: white;
-    margin-left: 36.2%;
 }
 
 .btn-add-carros:hover {
@@ -83,7 +82,6 @@ body {
     font-weight: 600;
     cursor: pointer;
     border-radius: 0.3rem;
-    margin-left: 36.5%;
     transition: all 200ms;
 }
 
@@ -93,16 +91,10 @@ body {
 
 #btn-add-cliente {
     display: none;
-    margin-left: 29%;
-}
-
-#btn-att-cliente {
-    margin-left: 29%;
 }
 
 #btns-carro {
     margin-top: 3vh;
-    margin-left: 4rem;
 }
 
 #btn-enviar-carro {
@@ -154,15 +146,18 @@ span.info-servicos {
     color: #e8cb25;
 }
 
-button#btn-servico-adicional {
-    padding: 0.7rem 1.4rem;
-    margin-left: 28%;
-}
-
-.tituloPagina {
+.divCentro {
     text-align: center;
 }
 
-.tituloPagina h2{
+.divCentro h2{
     font-weight: bold;
+}
+
+.btn-principal {
+    position: relative;
+    margin-top: 1rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
 }

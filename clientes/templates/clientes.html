@@ -8,10 +8,11 @@
 {% block 'dashboard' %}
 
     <br>
-    <div class="tituloPagina">
+    <div class="divCentro">
         <h2>Cadastrar cliente e veículos</h2>
     </div>
     <div class="container">
+       
         <div class="row">
             <div onclick="exibir_form('1')" class="btn-principal" id="btn-add-cliente">< Adicionar cliente</div> 
             <div onclick="exibir_form('2')" class="btn-principal" id="btn-att-cliente">Atualizar clientes ></div> 
@@ -31,7 +32,9 @@
                     <input type="text" class="form-control" placeholder="Insira seu CPF" name="cpf" value="{{cpf}}">
                     <br><br>
                     <div class="add-carros">
+                        <div class="divCentro">
                         <span class="btn-add-carros" onclick="add_carro()">Adicionar carro</span>
+                    </div>
                         <br>
                         <div id="form-carro">
                             {% for carro, placa, ano in carros %}

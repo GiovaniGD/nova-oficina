@@ -19,7 +19,10 @@
                     <input type="text" class="form-control" placeholder="Nome" name="nome" value="{{nome}}">
                     <br><br>
                     <div class="add-mecanicos">
+                        
+                    <div class="divCentro">
                         <span class="btn-add-mecanicos" onclick="add_mecanico()">Adicionar mecânico</span>
+                    </div>
                         <br>
                         <div id="form-mecanico">
                             {% for mecanico, email, cpf in mecanicos %}
