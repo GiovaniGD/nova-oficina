@@ -4,9 +4,8 @@ WORKDIR /Oficina
 
 COPY . .
 
-RUN apt-get update \
-    && apt-get install -y default-libmysqlclient-dev \
-    && pip install -r requirements.txt
+RUN pip install django
+RUN pip install mysqlclient
 
 EXPOSE 8000
 
