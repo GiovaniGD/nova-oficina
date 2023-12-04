@@ -14,18 +14,16 @@
             <h3 id="servico-titulo">{{servico.titulo}}</h3>
         </div>        
         <p class="detalhes-servico"><span class="info-servicos">Cliente:</span> {{ servico.cliente }}</p>
-        <p class="detalhes-servico"><span class="info-servicos">Categoria:</span> {{ servico.categoria_manutenção }}</p>
+        <p class="detalhes-servico"><span class="info-servicos">Equipe:</span> {{ servico.equipe }}</p>
+        {% for categoria in categorias %}
+            <p class="detalhes-servico"><span class="info-servicos">Categoria:</span> {{ categoria.titulo }}</p>
+        {% endfor %}
         <p class="detalhes-servico"><span class="info-servicos">Data de envio:</span> {{ servico.data_inicio }}</p>
         <p class="detalhes-servico"><span class="info-servicos">Data de entrega:</span> {{ servico.data_entrega }}</p>
         <p class="detalhes-servico"><span class="info-servicos">Estado de finalização:</span> {{ servico.finalizado }}</p>
         <p class="detalhes-servico"><span class="info-servicos">Protocolo:</span> {{ servico.protocolo }}</p>
-        <p class="detalhes-servico"><span class="info-servicos">Identificador:</span> {{ servico.identificador }}</p>
         <p class="detalhes-servico"><span class="info-servicos">Preço total:</span> {{ servico.preco_total }}</p>
         <br>
-        <br>
-        <button type="button" class="btn-principal" id="btn-servico-adicional" data-toggle="modal" data-target="#exampleModal">
-            Serviço adicional
-        </button>
         
     </div>
 
@@ -35,34 +33,4 @@
 
 
 {% block 'body' %}
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Serviço adicional</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="{% url 'servico_adicional' %}" method="POST">{% csrf_token %}
-                    <input type="hidden" name="identificador_servico" value={{servico.identificador}}>
-
-                    <label>Digite o título:</label>
-                    <input type="text" placeholder="titulo" class="form-control" name="titulo">
-
-                    <label>Digite o descrição:</label>
-                    <input type="text" placeholder="titulo" class="form-control" name="descricao">
-    
-
-                    <label>Digite o preço:</label>
-                    <input type="number" placeholder="titulo" class="form-control" name="preco">
-                    <br>
-                    <input type="submit" class="btn btn-success" value="Salvar">
-                </form>
-            </div>
-            </div>
-        </div>
-    </div>
-
 {% endblock %}

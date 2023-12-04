@@ -23,7 +23,7 @@
         <tbody>
             {% for servico in servicos %}
                 <tr>
-                    <th><a href="{% url 'servico' servico.identificador %}">{{servico.identificador}}</a></th>
+                    <th><a href="{% url 'servico' servico.id %}">{{servico.id}}</a></th>
                     <td>{{servico.titulo}}</td>
                     <td>{{servico.cliente}}</td>
                     <td>

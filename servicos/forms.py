@@ -1,5 +1,18 @@
 from django.forms import ModelForm
 from .models import Servico, CategoriaManutencao
+from equipes.models import Equipe
+
+class FormEquipe(ModelForm):
+    class Meta:
+        model = Equipe
+        fields = ['nome'] 
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.fields:
+            self.fields[field].widget.attrs.update({'class': 'form-control'})
+            self.fields[field].widget.attrs.update({'placeholder': field})
+
 
 class FormServico(ModelForm):
     class Meta:
