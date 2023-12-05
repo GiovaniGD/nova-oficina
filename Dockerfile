@@ -6,6 +6,7 @@ COPY . .
 
 RUN pip install django
 RUN pip install mysqlclient
+RUN pip install fpdf
 
 EXPOSE 8000
 
