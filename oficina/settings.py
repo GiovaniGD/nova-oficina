@@ -56,11 +56,11 @@ WSGI_APPLICATION = 'oficina.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'oficina',
+        'NAME': 'mysql',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': '1234',
         'HOST': 'localhost',
-        'PORT': '3306',
+        'PORT': '3307',
         'OPTIONS': {
             'sql_mode': 'STRICT_ALL_TABLES',
         },
