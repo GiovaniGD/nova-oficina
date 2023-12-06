@@ -6,7 +6,7 @@ SECRET_KEY = 'django-insecure-jneo8fq9-_#3kddovv2^hs!%s5u_fi79%m+&5-%rujrh78up(o
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [".onrender.com"]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -60,7 +60,7 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': '1234',
         'HOST': 'localhost',
-        'PORT': '3307',
+        'PORT': '3306',
         'OPTIONS': {
             'sql_mode': 'STRICT_ALL_TABLES',
         },
