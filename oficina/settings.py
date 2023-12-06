@@ -59,7 +59,7 @@ DATABASES = {
         'NAME': 'mysql',
         'USER': 'root',
         'PASSWORD': '1234',
-        'HOST': 'mysql',
+        'HOST': '172.17.0.3',
         'PORT': '3306',
         'OPTIONS': {
             'sql_mode': 'STRICT_ALL_TABLES',
