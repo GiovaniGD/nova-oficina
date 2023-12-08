@@ -1,12 +1,13 @@
 from pathlib import Path
 import os
+import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-jneo8fq9-_#3kddovv2^hs!%s5u_fi79%m+&5-%rujrh78up(o'
 
 DEBUG = True
 
-ALLOWED_HOSTS = [".onrender.com"]
+ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -56,16 +57,18 @@ WSGI_APPLICATION = 'oficina.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mysql',
+        'NAME': 'oficina',
         'USER': 'root',
-        'PASSWORD': '1234',
-        'HOST': '172.17.0.3',
+        'PASSWORD': '',
+        'HOST': 'localhost',
         'PORT': '3306',
         'OPTIONS': {
             'sql_mode': 'STRICT_ALL_TABLES',
         },
     }
 }
+
+DATABASES["default"] = dj_database_url.parse("postgres://root:yGboTyU9Qut3vR11toWSfKoJa7bYEdZM@dpg-clp37p146foc73ccgr40-a.oregon-postgres.render.com/oficina_itsh")
 
 AUTH_PASSWORD_VALIDATORS = [
     {
