@@ -5,9 +5,11 @@ import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-jneo8fq9-_#3kddovv2^hs!%s5u_fi79%m+&5-%rujrh78up(o'
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['oficina.onrender.com']
+
+CSRF_TRUSTED_ORIGINS = ['https://*.onrender.com', 'https://*.127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
